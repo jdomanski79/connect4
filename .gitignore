@@ -1,3 +1,6 @@
 /bin/
+/target
+/mvnw
+mvnw.cmd
 .settings
 .classpath
