@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+.board{
+  width: 300px;
+  height: 350px;
+  background: red;
+  margin: 10px 10px;
+}
+.board-column{
+  background: grey;
+  width: 50px;
+  height: 350px;
+  float: left;
+  cursor: pointer;
+}
+.cell{
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50px;
+  pointer-events: none;  /* invisible for click listner */
+}
+.clicked{
+  background: yellow;
+}
