@@ -7,9 +7,11 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class Connect4Controller {
     
+    
     @MessageMapping("/hello")
     @SendTo("/topic/game")
     public String game(String message) {
         return message;
+        
     }
 }

@@ -26,7 +26,7 @@ function connect(){
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame){
         console.log("Connected!!! " + frame);
-        cd  
+         
         stompClient.subscribe('/topic/game', function(message) {
             messageParagraph.innerHTML += "Column clicked :" + message.body +"\n";
             toggleColumn(message.body);

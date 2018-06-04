@@ -1,12 +1,12 @@
 package pl.jdomanski.connect4.game;
 
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class BoardTest {
+public class BoardTests {
 	
 	@Test
-	void constructor_OnCreate_ContainsEmptyFields() {
+	public void constructor_OnCreate_ContainsEmptyFields() {
 		Board board = new Board();
 		
 		char cell = board.getCell(6,5);
@@ -16,7 +16,7 @@ class BoardTest {
 	
 	
 	@Test
-	void submitMove_NotEmptyBoard_Works() {
+	public void submitMove_NotEmptyBoard_Works() {
 		Board board = new Board();
 		
 		board.submitMove(0);
@@ -29,7 +29,7 @@ class BoardTest {
 	}
 	
 	@Test
-	void submitMove_FullColumn_False() {
+	public void submitMove_FullColumn_False() {
 		Board board = new Board();
 		board.submitMove(0);//x
 		board.submitMove(0);//o
@@ -45,7 +45,7 @@ class BoardTest {
 		assertFalse(board.submitMove(0));
 	}
 	@Test
-	void submitMove_ChangePlayers_true() {
+	public void submitMove_ChangePlayers_true() {
 		Board board = new Board();
 		
 		board.submitMove(0);
@@ -56,7 +56,7 @@ class BoardTest {
 	}
 	
 	@Test
-	void submitMove_InvalidColumn_False() {
+	public void submitMove_InvalidColumn_False() {
 		Board board = new Board();
 		
 		assertFalse(board.submitMove(Board.COLUMNS));
@@ -65,14 +65,14 @@ class BoardTest {
 	}
 	
 	@Test
-	void isConnected_EmptyBoard_False() {
+	public void isConnected_EmptyBoard_False() {
 		Board board = new Board();
 		
 		assertFalse(board.isConnected(0));
 	}
 	
 	@Test
-	void isConnected_Column_True() {
+	public void isConnected_Column_True() {
 		char __ = '\0';
 		char x = 'x';
 		//char o = 'o';
@@ -87,11 +87,11 @@ class BoardTest {
 		};
 		Board board = new Board(boardTemplate);
 		
-		assertTrue(board.isConnected(0), "Column is connected!");
+		assertTrue("Column is connected!", board.isConnected(0) );
 	}
 	
 	@Test
-	void isConnected_Row_True() {
+	public void isConnected_Row_True() {
 		
 		char __ = '\0';
 		//char x = 'x';
@@ -111,7 +111,7 @@ class BoardTest {
 	}
 	
 	@Test
-	void isConnected_DiagonalTopToBottom_True() {
+	public void isConnected_DiagonalTopToBottom_True() {
 		char __ = '\0';
 		char x = 'x';
 		char o = 'o';
@@ -132,7 +132,7 @@ class BoardTest {
 	}
 	
 	@Test
-	void isConnected_DiagonalBottomToTop_True() {
+	public void isConnected_DiagonalBottomToTop_True() {
 		char __ = '\0';
 		char x = 'x';
 		char o = 'o';
@@ -154,7 +154,7 @@ class BoardTest {
 	}
 	
 	@Test
-	void isValidMove() {
+	public void isValidMove() {
 		char __ = '\0';
 		char x = 'x';
 		char o = 'o';
@@ -178,7 +178,7 @@ class BoardTest {
 	}
 	
 	@Test
-	void isValidMove_invalidColumn_false() {
+	public void isValidMove_invalidColumn_false() {
 		char __ = '\0';
 		char x = 'x';
 		char o = 'o';
